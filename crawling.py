@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import requests
 import re
 from bs4 import BeautifulSoup
@@ -120,7 +122,7 @@ while True:
 
         get_crawling_data(search_bible_url, vol, input_chap)
 
-    print("다시 검색하시겠습니까? (yes = y, no = n)")
+    print("종료하시겠습니까? (yes = y, no = Press any key)")
     answer = input()
-    if answer != "y":
+    if answer == "y":
         break
