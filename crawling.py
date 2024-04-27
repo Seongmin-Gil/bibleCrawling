@@ -2,6 +2,7 @@
 
 import requests
 import re
+import os
 from bs4 import BeautifulSoup
 
 bible_title = {
@@ -90,7 +91,10 @@ def get_crawling_data(URL, vol, chap):
         print("존재하지 않습니다.")
         return
 
-    file = open("bible_{}_{}장.txt".format(vol, chap), "w")
+    filePath = os.getcwd()
+    fileName = "/dbible_{}_{}장.txt".format(vol, chap)
+    print(filePath + fileName)
+    file = open(filePath + fileName, "w", encoding="UTF8")
 
     for text in texts:
         num = re.findall(r"\d+", text)
